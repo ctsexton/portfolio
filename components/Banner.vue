@@ -1,0 +1,12 @@
+<template lang="pug">
+  v-flex.pa-0(xs12 grow)
+    v-sheet.display-2.font-weight-thin.pa-4(:color="color") {{ text }}
+</template>
+<script>
+export default {
+  props: {
+    color: String,
+    text: String
+  }
+}
+</script>
