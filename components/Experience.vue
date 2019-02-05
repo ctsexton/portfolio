@@ -12,16 +12,25 @@
         v-divider
         v-card-text
           p.body-2.font-weight-thin {{ item.time }} | {{ item.location }}
-        v-card-text
-          p.subheading.font-weight-thin Tech Stack:
+          p.title.font-weight-thin
+            i {{ item.description }}
+          ul
+            li.subheading.font-weight-thin.my-1(v-for="point, index in item.bullets" :key="index") {{ point }}
+          v-layout.mt-3(align-baseline)
+            v-flex.title.font-weight-thin(xs6) Link:
+              | 
+              a.blue--text.text-nodec(:href="item.link") {{ item.link }}
+            v-flex.title.font-weight-thin(xs6 v-if="item.code") Code:
+              | 
+              a.blue--text.text-nodec(:href="item.code") {{ item.code }}
+        v-divider
+        v-card-text.pb-2
+          p.title Tech Stack:
             | 
-            span(v-for="tool, index in item.tools" :key="tool") {{ tool }}
+            span.font-weight-thin(v-for="tool, index in item.tools" :key="tool") {{ tool }}
               span(v-if="index != Object.keys(item.tools).length - 1")
                 |,
                 |
-        v-card-text.subheading {{ item.description }}
-        v-card-text.subheading Link: {{ item.link }}
-        v-card-text.subheading(v-if="item.code") Code: {{ item.code }}
 </template>
 <script>
 export default {
@@ -31,7 +40,10 @@ export default {
 }
 </script>
 <style scoped>
->>>.lighterTransparency {
-  background: rgba(150, 150, 150, 0.3);
+>>>.text-nodec {
+  text-decoration: none;
+}
+>>>.text-nodec:hover {
+  text-decoration: underline;
 }
 </style>
