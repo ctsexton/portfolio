@@ -42,7 +42,7 @@
     </v-toolbar>
     -->
     <v-content class="texture">
-      <v-container grid-list-md class="py-0 px-1">
+      <v-container grid-list-md class="py-0 px-1" fill-height>
         <nuxt />
       </v-container>
     </v-content>

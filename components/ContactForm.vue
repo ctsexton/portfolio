@@ -1,41 +1,58 @@
 <template>
-  <v-flex>
-    <v-card v-if="submitStatus != 'OK'" width="100%" class="transparent pa-4 standard-card">
-      <v-flex>
-        <span class="display-1">Contact Me</span>
-        <v-form>
-          <v-text-field 
-            v-model="name" 
-            :error-messages="nameErrors"
-            @input="$v.name.$touch()"
-            @blur="$v.name.$touch()"
-            label="Name" 
-            required>
-          </v-text-field>
-          <v-text-field 
-            v-model="email" 
-            :error-messages="emailErrors"
-            @input="$v.email.$touch()"
-            @blur="$v.email.$touch()"
-            label="Email" 
-            required>
-          </v-text-field>
-          <v-textarea 
-            v-model="message" 
-            :error-messages="messageErrors"
-            @input="$v.message.$touch()"
-            @blur="$v.message.$touch()"
-            label="Message" 
-            required>
-          </v-textarea>
-          <v-btn @click="submit" left large color="secondary">Submit</v-btn>
-        </v-form>
-      </v-flex>
-    </v-card>
-    <v-card v-else>
-      <v-card-text class="display-2 text-xs-center py-5">Thanks for your message!</v-card-text>
-    </v-card>
-  </v-flex>
+  <fragment>
+    <v-flex xs8 grow>
+      <v-card class="semiTransparent my-5">
+        <v-flex>
+          <v-card v-if="submitStatus != 'OK'" width="100%" class="transparent pa-4 standard-card">
+            <v-flex>
+              <v-form>
+                <v-text-field 
+                  v-model="name" 
+                  :error-messages="nameErrors"
+                  @input="$v.name.$touch()"
+                  @blur="$v.name.$touch()"
+                  label="Name" 
+                  required>
+                </v-text-field>
+                <v-text-field 
+                  v-model="email" 
+                  :error-messages="emailErrors"
+                  @input="$v.email.$touch()"
+                  @blur="$v.email.$touch()"
+                  label="Email" 
+                  required>
+                </v-text-field>
+                <v-textarea 
+                  v-model="message" 
+                  :error-messages="messageErrors"
+                  @input="$v.message.$touch()"
+                  @blur="$v.message.$touch()"
+                  label="Message" 
+                  required>
+                </v-textarea>
+                <v-btn @click="submit" left large color="secondary">Submit</v-btn>
+              </v-form>
+            </v-flex>
+          </v-card>
+          <v-card v-else>
+            <v-card-text class="display-2 text-xs-center py-5">Thanks for your message!</v-card-text>
+          </v-card>
+        </v-flex>
+      </v-card>
+    </v-flex>
+    <v-flex xs8 grow>
+      <v-card class="semiTransparent text-xs-center">
+        <v-layout justify-center class="my-5 pa-5">
+          <v-flex shrink class="mx-5">
+            <v-icon size="100">fab fa-github</v-icon>
+          </v-flex>
+          <v-flex shrink class="mx-5">
+            <v-icon size="100">fab fa-linkedin</v-icon>
+          </v-flex>
+        </v-layout>
+      </v-card>
+    </v-flex>
+  </fragment>
 </template>
 <script>
 import { validationMixin } from 'vuelidate'
