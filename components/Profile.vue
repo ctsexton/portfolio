@@ -1,5 +1,5 @@
 <template lang="pug">
-  fragment
+  v-layout(row justify-center)
     v-flex(xs8)
       v-card.semiTransparent.my-5
         v-layout

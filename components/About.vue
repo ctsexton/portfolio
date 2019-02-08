@@ -1,7 +1,7 @@
 <template lang="pug">
   fragment
-    v-flex(xs8 grow)
-      v-card.semiTransparent.my-5
+    v-flex(xs8 grow).ma-0
+      v-card.my-5
         v-card-text.body-2 {{ about.description }}
 </template>
 <script>

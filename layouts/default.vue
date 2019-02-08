@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       :clipped="clipped"
       v-model="drawer"
@@ -9,7 +9,11 @@
       light
       class="elevation-5 grey lighten-3"
     >
-      <v-layout justify-center align-center class="blue-grey darken-1 py-4">
+      <v-layout
+        justify-center
+        align-center 
+        class="blue darken-2 py-4 click" 
+        v-scroll-to="'#top'">
         <v-flex xs6>
           <div class="headline white--text font-weight-thin">Cameron<br>Sexton</div>
           <div class="body-1 white--text font-weight-thin">Software Developer</div>
@@ -34,15 +38,8 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <!--
-    <v-toolbar fixed app :clipped-left="clipped">
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title v-text="content.profile.name"></v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
-    -->
     <v-content class="texture">
-      <v-container grid-list-md class="py-0 px-1" fill-height>
+      <v-container grid-list-md class="py-0 px-1" fluid fill-height>
         <nuxt />
       </v-container>
     </v-content>
@@ -57,12 +54,13 @@
         clipped: false,
         drawer: true,
         fixed: false,
+        hoverLogo: false,
         content: content.attributes,
         items: [
           { icon: 'perm_identity', title: 'About', to: '/', color: 'blue' },
-          { icon: 'assessment', title: 'Skills', to: '/', color: 'green' },
           { icon: 'trending_up', title: 'Experience', to: '/', color: 'pink' },
           { icon: 'build', title: 'Projects', to: '/', color: 'yellow darken-1' },
+          { icon: 'assessment', title: 'Skills', to: '/', color: 'green' },
           { icon: 'school', title: 'Education', to: '/', color: 'purple' },
           { icon: 'mail', title: 'Contact', to: '/', color: 'brown' },
         ],
@@ -77,5 +75,8 @@
   background-repeat: repeat;
   background-attachment: scroll;
   position: relative;
+}
+>>>.click {
+  cursor: pointer;
 }
 </style>

@@ -1,19 +1,19 @@
 <template lang="pug">
   v-layout(column justify-start fill-height)
-    v-layout(row wrap justify-center align-center fill-heightd id="Profile")
-      profile
+    v-layout(id="top")
+      coverPhoto
     v-layout(row wrap justify-space-around id="About")
       banner(color="rgba(0, 50, 255, 0.4)" text="About")
       about(:about="content.about")
-    v-layout(row wrap justify-space-around id="Skills")
-      banner(color="rgba(0, 255, 0, 0.4)" text="Skills")
-      skills(:skills="content.skills")
     v-layout(row wrap justify-space-around id="Experience")
       banner(color="rgba(255, 20, 20, 0.4)" text="Experience")
       experience(:experience="content.experience")
     v-layout(row wrap justify-space-around id="Projects")
       banner(color="rgba(255, 225, 0, 0.4)" text="Projects")
       projects(:projects="content.portfolio")
+    v-layout(row wrap justify-space-around id="Skills")
+      banner(color="rgba(0, 255, 0, 0.4)" text="Skills")
+      skills(:skills="content.skills")
     v-layout(row wrap justify-space-around id="Education")
       banner(color="rgba(230, 0, 255, 0.4)" text="Education")
       education(:education="content.education")
@@ -31,6 +31,7 @@ import Projects from '~/components/Projects.vue'
 import About from '~/components/About.vue'
 import Education from '~/components/Education.vue'
 import Experience from '~/components/Experience.vue'
+import CoverPhoto from '~/components/CoverPhoto.vue'
 import content from '~/static/content.md'
 export default {
   components: {
@@ -41,7 +42,8 @@ export default {
     Projects,
     Experience,
     Profile,
-    Education
+    Education,
+    CoverPhoto
   },
   data () {
     return {
@@ -53,5 +55,8 @@ export default {
 <style scoped>
 >>>.semiTransparent {
   background-color: rgba(0, 0, 0, 0.5);
+}
+>>>.standout {
+  text-shadow: 5px 5px 10px black;
 }
 </style>

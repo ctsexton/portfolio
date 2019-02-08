@@ -1,7 +1,7 @@
 <template lang="pug">
   fragment
-    v-flex(xs4 v-for="item in education" :key="item.degree")
-      v-card.semiTransparent.my-5
+    v-flex.py-5(xs4 v-for="item in education" :key="item.degree")
+      v-card.my-5(elevation="10")
         v-card-text.headline {{ item.degree }}
         v-divider
         v-card-text.subheading.pb-1.pt-3 {{ item.institution }} | {{ item.year }}

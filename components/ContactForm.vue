@@ -1,58 +1,43 @@
-<template>
-  <fragment>
-    <v-flex xs8 grow>
-      <v-card class="semiTransparent my-5">
-        <v-flex>
-          <v-card v-if="submitStatus != 'OK'" width="100%" class="transparent pa-4 standard-card">
-            <v-flex>
-              <v-form>
-                <v-text-field 
+<template lang="pug">
+  fragment
+    v-flex(xs8 grow)
+      v-card.my-5(light color="grey lighten-4" elevation="10")
+        v-layout
+          v-flex.pa-0(xs4)
+            v-img(src="profilepic.jpg")
+          v-flex(grow)
+            v-layout.pa-2(justify-end)
+              v-flex.mx-1(shrink)
+                v-icon(size="50" color="grey darken-3") fab fa-github
+              v-flex.mx-1(shrink)
+                v-icon(size="50" color="grey darken-3") fab fa-linkedin
+            div(v-if="submitStatus != 'OK'")
+              v-form.pa-3.transparent.standard-card(width="100%" left)
+                v-text-field(
                   v-model="name" 
                   :error-messages="nameErrors"
                   @input="$v.name.$touch()"
                   @blur="$v.name.$touch()"
                   label="Name" 
-                  required>
-                </v-text-field>
-                <v-text-field 
+                  required)
+                v-text-field(
                   v-model="email" 
                   :error-messages="emailErrors"
                   @input="$v.email.$touch()"
                   @blur="$v.email.$touch()"
                   label="Email" 
-                  required>
-                </v-text-field>
-                <v-textarea 
+                  required)
+                v-textarea(
                   v-model="message" 
                   :error-messages="messageErrors"
                   @input="$v.message.$touch()"
                   @blur="$v.message.$touch()"
                   label="Message" 
-                  required>
-                </v-textarea>
-                <v-btn @click="submit" left large color="secondary">Submit</v-btn>
-              </v-form>
-            </v-flex>
-          </v-card>
-          <v-card v-else>
-            <v-card-text class="display-2 text-xs-center py-5">Thanks for your message!</v-card-text>
-          </v-card>
-        </v-flex>
-      </v-card>
-    </v-flex>
-    <v-flex xs8 grow>
-      <v-card class="semiTransparent text-xs-center">
-        <v-layout justify-center class="my-5 pa-5">
-          <v-flex shrink class="mx-5">
-            <v-icon size="100">fab fa-github</v-icon>
-          </v-flex>
-          <v-flex shrink class="mx-5">
-            <v-icon size="100">fab fa-linkedin</v-icon>
-          </v-flex>
-        </v-layout>
-      </v-card>
-    </v-flex>
-  </fragment>
+                  required)
+              v-btn.ma-0.pa-0(@click="submit" left large color="success") Submit
+            v-card-text.display-2.text-xs-center.py-5(v-else) Thanks for your message!
+    v-flex(xs8 grow)
+      v-card.text-xs-center
 </template>
 <script>
 import { validationMixin } from 'vuelidate'
@@ -79,6 +64,7 @@ export default {
         this.submitStatus = 'ERROR'
       } else {
         // do your submit logic here
+        /*
         this.$axios.$post(this.formUrl,
           {
             form: {
@@ -88,6 +74,8 @@ export default {
             }
           }
         )
+        */
+        console.log(this.name)
         this.submitStatus = 'PENDING'
         setTimeout(() => {
           this.submitStatus = 'OK'
