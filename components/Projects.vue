@@ -2,8 +2,8 @@
   fragment
     v-flex(xs12 grow).ma-0
       v-layout(justify-space-around wrap)
-        v-flex(xs5 v-for="item in projects" :key="item.title")
-          v-card.ma-5(elevation="10" color="grey lighten-4")
+        v-flex(xs12 sm10 md5 v-for="item in projects" :key="item.title")
+          v-card(elevation="10" color="grey lighten-4")
             v-img(:src="item.image")
             v-divider
             v-card-text.font-weight-light.ma-0.pb-0
@@ -42,6 +42,9 @@ export default {
 }
 >>>.text-nodec:hover {
   text-decoration: underline;
+}
+>>>a {
+  word-break: break-word;
 }
 </style>
 

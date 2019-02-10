@@ -1,9 +1,9 @@
 <template lang="pug">
   fragment
-    v-flex(xs8 grow)
-      v-card.my-5(light color="grey lighten-4" elevation="10")
-        v-layout
-          v-flex.pa-0(xs4)
+    v-flex(xs12 grow)
+      v-card.my-0(light color="grey lighten-4" elevation="10")
+        v-layout(wrap)
+          v-flex.pa-0(xs12)
             v-img(src="profilepic.jpg")
           v-flex(grow)
             v-layout.pa-2(justify-end)
