@@ -39,7 +39,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-layout v-if="$vuetify.breakpoint.mdAndDown">
+    <v-layout v-if="isMounted && $vuetify.breakpoint.mdAndDown">
       <v-toolbar fixed app dark class="blue darken-2">
         <v-icon @click="drawer = !drawer">fas fa-bars</v-icon>
         <v-toolbar-title>Cameron Sexton</v-toolbar-title>
@@ -59,6 +59,7 @@
     data () {
       return {
         drawer: null,
+        isMounted: false,
         content: content.attributes,
         items: [
           { icon: 'perm_identity', title: 'About', to: '/', color: 'blue' },
@@ -87,6 +88,9 @@
           this.drawer = !this.drawer
         }
       }
+    },
+    mounted: function() {
+      this.isMounted = true
     }
   }
 </script>
