@@ -1,7 +1,7 @@
 <template lang="pug">
   fragment
-    v-flex.py-0(xs12 v-for="item in education" :key="item.degree")
-      v-card.my-0(elevation="10")
+    v-flex.py-0(xs11 sm8 md5 lg4 shrink v-for="item in education" :key="item.degree")
+      v-card(:class="verticalSpace" elevation="10")
         v-card-text.headline {{ item.degree }}
         v-divider
         v-card-text.subheading.pb-1.pt-3 {{ item.institution }} | {{ item.year }}
@@ -12,6 +12,15 @@
 export default {
   props: {
     education: Array
+  },
+  computed: {
+    verticalSpace: function() {
+      if (this.$vuetify.breakpoint.xsOnly) {
+        return 'my-3'
+      } else {
+        return 'my-5'
+      }
+    }
   }
 }
 </script>

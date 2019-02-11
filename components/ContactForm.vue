@@ -1,43 +1,39 @@
 <template lang="pug">
   fragment
-    v-flex(xs12 grow)
-      v-card.my-0(light color="grey lighten-4" elevation="10")
-        v-layout(wrap)
-          v-flex.pa-0(xs12)
-            v-img(src="profilepic.jpg")
-          v-flex(grow)
-            v-layout.pa-2(justify-end)
-              v-flex.mx-1(shrink)
-                v-icon(size="50" color="grey darken-3") fab fa-github
-              v-flex.mx-1(shrink)
-                v-icon(size="50" color="grey darken-3") fab fa-linkedin
-            div(v-if="submitStatus != 'OK'")
-              v-form.pa-3.transparent.standard-card(width="100%" left)
-                v-text-field(
-                  v-model="name" 
-                  :error-messages="nameErrors"
-                  @input="$v.name.$touch()"
-                  @blur="$v.name.$touch()"
-                  label="Name" 
-                  required)
-                v-text-field(
-                  v-model="email" 
-                  :error-messages="emailErrors"
-                  @input="$v.email.$touch()"
-                  @blur="$v.email.$touch()"
-                  label="Email" 
-                  required)
-                v-textarea(
-                  v-model="message" 
-                  :error-messages="messageErrors"
-                  @input="$v.message.$touch()"
-                  @blur="$v.message.$touch()"
-                  label="Message" 
-                  required)
-              v-btn.ma-0.pa-0(@click="submit" left large color="success") Submit
-            v-card-text.display-2.text-xs-center.py-5(v-else) Thanks for your message!
-    v-flex(xs8 grow)
-      v-card.text-xs-center
+    v-flex(xs11 lg8)
+      v-card.my-5(light color="grey lighten-4" elevation="10" tile)
+        v-layout.ma-0.pa-0(wrap justify-center)
+          v-img(contain width="100%" max-width="320px" src="profilepic.jpg")
+          v-flex.pa-0.ma-0(grow)
+            v-layout.pa-0.ma-0(wrap justify-center)
+              v-layout.px-3.ma-0(justify-end align-center)
+                v-icon.ma-2(size="40" color="grey darken-3") fab fa-github
+                v-icon.ma-2(size="40" color="grey darken-3") fab fa-linkedin
+              v-flex.pa-0(xs12 v-if="submitStatus != 'OK'")
+                v-form.pa-3.transparent.standard-card(width="100%" left)
+                  v-text-field(
+                    v-model="name" 
+                    :error-messages="nameErrors"
+                    @input="$v.name.$touch()"
+                    @blur="$v.name.$touch()"
+                    label="Name" 
+                    required)
+                  v-text-field(
+                    v-model="email" 
+                    :error-messages="emailErrors"
+                    @input="$v.email.$touch()"
+                    @blur="$v.email.$touch()"
+                    label="Email" 
+                    required)
+                  v-textarea(
+                    v-model="message" 
+                    :error-messages="messageErrors"
+                    @input="$v.message.$touch()"
+                    @blur="$v.message.$touch()"
+                    label="Message" 
+                    required)
+                v-btn.mx-0(@click="submit" left large color="success") Submit
+              v-card-text.display-2.text-xs-center.py-5(v-else) Thanks for your message!
 </template>
 <script>
 import { validationMixin } from 'vuelidate'

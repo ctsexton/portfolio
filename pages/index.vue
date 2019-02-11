@@ -1,6 +1,6 @@
 <template lang="pug">
   v-layout(column justify-start fill-height)
-    v-layout(id="top")
+    v-layout.pa-0(id="top")
       coverPhoto
     v-layout(row wrap justify-space-around id="About")
       banner(color="rgba(0, 50, 255, 0.4)" text="About")

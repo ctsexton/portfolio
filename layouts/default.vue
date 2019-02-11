@@ -11,6 +11,7 @@
     >
       <v-layout
         justify-center
+        hidden-sm-and-down
         align-center 
         class="blue darken-2 py-4 click" 
         v-scroll-to="'#top'">
@@ -23,8 +24,9 @@
       <v-list>
         <v-list-tile
           router
-          v-scroll-to="'#' + item.title"
+          v-scroll-to="{el: '#' + item.title, offset: scrollOffset}"
           :to="'/'"
+          @click="onMenuSelect"
           :key="i"
           v-for="(item, i) in items"
           exact
@@ -38,8 +40,14 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+    <v-layout v-if="$vuetify.breakpoint.smAndDown">
+      <v-toolbar fixed app dark class="blue darken-2">
+        <v-icon @click="drawer = !drawer">fas fa-bars</v-icon>
+        <v-toolbar-title>Cameron Sexton</v-toolbar-title>
+      </v-toolbar>
+    </v-layout>
     <v-content class="texture">
-      <v-container grid-list-md class="py-0 px-1" fluid fill-height>
+      <v-container grid-list-md class="py-0 px-0" fluid fill-height>
         <nuxt />
       </v-container>
     </v-content>
@@ -65,6 +73,22 @@
           { icon: 'mail', title: 'Contact', to: '/', color: 'brown' },
         ],
       }
+    },
+    computed: {
+      scrollOffset: function() {
+        if (this.$vuetify.breakpoint.smAndDown) {
+          return -56
+        } else {
+          return 0
+        }
+      }
+    },
+    methods: {
+      onMenuSelect: function() {
+        if (this.$vuetify.breakpoint.smAndDown) {
+          this.drawer = !this.drawer
+        }
+      }
     }
   }
 </script>
@@ -75,6 +99,7 @@
   background-repeat: repeat;
   background-attachment: scroll;
   position: relative;
+  overflow: hidden;
 }
 >>>.click {
   cursor: pointer;

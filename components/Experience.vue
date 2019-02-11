@@ -1,7 +1,7 @@
 <template lang="pug">
   fragment
-    v-flex(xs12 sm10 md8 grow).ma-0
-      v-card.ma-0(v-for="item in experience" :key="item.title" elevation="10" color="grey lighten-4")
+    v-flex(xs11 sm10 md8 grow).ma-0
+      v-card(:class="verticalSpace" v-for="item in experience" :key="item.title" elevation="10" color="grey lighten-4")
         v-img(:src="item.image")
         v-divider
         v-card-text.font-weight-light.ma-0.pb-0
@@ -37,6 +37,14 @@
 export default {
   props: {
     experience: Array
+  }, computed: {
+    verticalSpace: function() {
+      if (this.$vuetify.breakpoint.xsOnly) {
+        return 'my-3'
+      } else {
+        return 'my-5'
+      }
+    }
   }
 }
 </script>
