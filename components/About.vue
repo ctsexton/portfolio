@@ -1,8 +1,12 @@
 <template lang="pug">
   fragment
-    v-flex(xs10 grow).ma-0
-      v-card.my-5
-        v-card-text.body-2 {{ about.description }}
+    v-flex(xs11 sm10 md8 lg7 grow).ma-0
+      v-card.my-5(elevation="10")
+        v-card-text.body-2
+          p.display-1 What do I bring to the table?
+          ul.title.font-weight-light
+            li.my-3(v-for="item, index in about.whatIBring" :key="index")
+              span(v-html="item")
 </template>
 <script>
 export default {
