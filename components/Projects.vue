@@ -4,7 +4,7 @@
       v-card(elevation="10" color="grey lighten-4" :class="verticalSpace")
         v-img(:src="item.image")
         v-divider
-        v-card-text.font-weight-light.ma-0.pb-0(:class="{ headline: $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.mdAndUp}")
+        v-card-text.font-weight-light.ma-0.pb-0(:class="{ headline: $breakpoint.is('smAndDown'), 'display-1': $breakpoint.is('mdAndUp')}")
           p.text-xs-left.font-weight-light {{ item.title }}
         v-divider
         v-card-text.py-1

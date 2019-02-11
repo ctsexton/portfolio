@@ -20,7 +20,8 @@ module.exports = {
   plugins: [
     '~/plugins/vuetify.js',
     '~plugins/vue-scrollto.js',
-    '~plugins/vue-fragment'
+    '~plugins/vue-fragment',
+    '~plugins/vue-breakpoint.js'
   ],
   css: ['~/assets/style/app.styl'],
   /*

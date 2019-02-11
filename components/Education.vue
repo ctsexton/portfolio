@@ -6,7 +6,7 @@
           v-flex.pa-4(xs12)
             v-img(width="100%" src="monash.svg" position="center center")
         v-divider
-        v-card-text.font-weight-thin(:class="{ headline: $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.mdAndUp}") {{ item.degree }}
+        v-card-text.font-weight-thin(:class="{ headline: $breakpoint.is('smAndDown'), 'display-1': $breakpoint.is('mdAndUp')}") {{ item.degree }}
         v-divider
         v-card-text.subheading.pb-1.pt-3 {{ item.institution }} | {{ item.year }}
         v-card-text.subheading.py-2

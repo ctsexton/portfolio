@@ -5,8 +5,8 @@
         v-img(:src="item.image")
         v-divider
         v-layout.mx-1.my-2.pa-0(wrap align-baseline)
-          v-flex.ma-0.text-xs-left.font-weight-light(xs12 md6 :class="{ headline: $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.mdAndUp}") {{ item.title }}
-          v-flex.ma-0.text-md-right(xs12 md6 :class="{ subheading: $vuetify.breakpoint.smAndDown, 'headline': $vuetify.breakpoint.mdAndUp}") {{ item.role }}
+          v-flex.ma-0.text-xs-left.font-weight-light(xs12 md6 :class="{ headline: $breakpoint.is('smAndDown'), 'display-1': $breakpoint.is('mdAndUp')}") {{ item.title }}
+          v-flex.ma-0.text-md-right(xs12 md6 :class="{ subheading: $breakpoint.is('smAndDown'), 'headline': $breakpoint.is('mdAndUp')}") {{ item.role }}
         v-divider
         v-card-text
           p.body-2.font-weight-light {{ item.time }} | {{ item.location }}
