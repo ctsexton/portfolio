@@ -11,7 +11,7 @@
 export default {
   computed: {
     imgHeight: function() {
-      if (this.$vuetify.breakpoint.smAndDown) {
+      if (this.$vuetify.breakpoint.mdAndDown) {
         return 'calc(100vh - 56px)'
       } else {
         return '100vh'

@@ -7,7 +7,7 @@
         v-layout(row wrap justify-space-around)
           v-flex.ma-3.pa-0.text-xs-center(min-width="200px" v-for="item in value" :key="item.title") 
             v-icon(:size="iconSize" color="grey darken-3") {{ item.icon }}
-            .body-1.font-weight-thin {{ item.title }}
+            .font-weight-thin(:class="{ 'body-2': $vuetify.breakpoint.smAndDown, headline: $vuetify.breakpoint.mdAndUp}") {{ item.title }}
 </template>
 <script>
 export default {

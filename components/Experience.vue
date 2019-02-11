@@ -1,15 +1,12 @@
 <template lang="pug">
   fragment
-    v-flex(xs11 sm10 md8 grow).ma-0
-      v-card(:class="verticalSpace" v-for="item in experience" :key="item.title" elevation="10" color="grey lighten-4")
+    v-flex.ma-0.pa-0(xs11 sm10 md8 lg7 grow v-for="item in experience" :key="item.title")
+      v-card(:class="verticalSpace" elevation="10" color="grey lighten-4")
         v-img(:src="item.image")
         v-divider
-        v-card-text.font-weight-light.ma-0.pb-0
-          v-layout(wrap align-baseline)
-            v-flex(xs12 md6)
-              p.display-1.text-xs-left.font-weight-light {{ item.title }}
-            v-flex(xs12 md6)
-              p.headline.text-md-right {{ item.role }}
+        v-layout.mx-1.my-2.pa-0(wrap align-baseline)
+          v-flex.ma-0.text-xs-left.font-weight-light(xs12 md6 :class="{ headline: $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.mdAndUp}") {{ item.title }}
+          v-flex.ma-0.text-md-right(xs12 md6 :class="{ subheading: $vuetify.breakpoint.smAndDown, 'headline': $vuetify.breakpoint.mdAndUp}") {{ item.role }}
         v-divider
         v-card-text
           p.body-2.font-weight-light {{ item.time }} | {{ item.location }}

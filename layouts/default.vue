@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      :clipped="clipped"
       v-model="drawer"
       fixed
       app
@@ -11,7 +10,7 @@
     >
       <v-layout
         justify-center
-        hidden-sm-and-down
+        hidden-md-and-down
         align-center 
         class="blue darken-2 py-4 click" 
         v-scroll-to="'#top'">
@@ -40,7 +39,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-layout v-if="$vuetify.breakpoint.smAndDown">
+    <v-layout v-if="$vuetify.breakpoint.mdAndDown">
       <v-toolbar fixed app dark class="blue darken-2">
         <v-icon @click="drawer = !drawer">fas fa-bars</v-icon>
         <v-toolbar-title>Cameron Sexton</v-toolbar-title>
@@ -59,10 +58,7 @@
   export default {
     data () {
       return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        hoverLogo: false,
+        drawer: null,
         content: content.attributes,
         items: [
           { icon: 'perm_identity', title: 'About', to: '/', color: 'blue' },
@@ -78,6 +74,8 @@
       scrollOffset: function() {
         if (this.$vuetify.breakpoint.smAndDown) {
           return -56
+        } else if (this.$vuetify.breakpoint.mdOnly) {
+          return -64
         } else {
           return 0
         }
@@ -85,7 +83,7 @@
     },
     methods: {
       onMenuSelect: function() {
-        if (this.$vuetify.breakpoint.smAndDown) {
+        if (this.$vuetify.breakpoint.mdAndDown) {
           this.drawer = !this.drawer
         }
       }
