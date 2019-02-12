@@ -23,6 +23,9 @@ module.exports = {
     '~plugins/vue-fragment',
     '~plugins/vue-breakpoint.js'
   ],
+  modules: [
+    '@nuxtjs/axios'
+  ],
   css: ['~/assets/style/app.styl'],
   /*
   ** Customize the progress bar color

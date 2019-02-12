@@ -60,7 +60,6 @@ export default {
         this.submitStatus = 'ERROR'
       } else {
         // do your submit logic here
-        /*
         this.$axios.$post(this.formUrl,
           {
             form: {
@@ -70,8 +69,6 @@ export default {
             }
           }
         )
-        */
-        console.log(this.name)
         this.submitStatus = 'PENDING'
         setTimeout(() => {
           this.submitStatus = 'OK'
@@ -81,12 +78,9 @@ export default {
   },
   computed: {
     formUrl: function () {
-      /*
-      const apiUrl = process.env.cockpit.realUrl
-      const token = process.env.cockpit.apiToken
+      const apiUrl = 'https://gh-backend.camsexton.com'
+      const token = '84654bf365c06b61021b0190842a08'
       return `${apiUrl}/api/forms/submit/Contact?token=${token}`
-      */
-      return ''
     },
     nameErrors () {
       const errors = []

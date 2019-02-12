@@ -24,3 +24,4 @@ For detailed explanation on how things work, check out the [Nuxt.js](https://git
 ## To Do
  - Improve content wording
  - About section
+ - get contact form working
