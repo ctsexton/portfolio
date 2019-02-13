@@ -2,7 +2,7 @@
   fragment
     v-flex.ma-0.pa-0(xs11 sm10 md8 grow v-for="item in experience" :key="item.title")
       v-card(:class="verticalSpace" elevation="10" color="grey lighten-4")
-        v-img(:src="item.image")
+        //v-img(:src="item.image")
         v-divider
         v-layout.mx-2.my-3.pa-0(wrap align-baseline)
           v-flex.ma-0.text-xs-left.font-weight-light(xs12 md6 :class="{ headline: $breakpoint.is('smAndDown'), 'headline': $breakpoint.is('mdAndUp')}") {{ item.title }}
@@ -15,7 +15,7 @@
           ul
             li.body-2.font-weight-light.my-1(v-for="point, index in item.bullets" :key="index") {{ point }}
           v-layout.mt-3(wrap align-baseline)
-            v-flex.body-2.font-weight-light(xs12 md6) Link:
+            v-flex.body-2.font-weight-light(xs12 md6 v-if="item.link") Link:
               | 
               a.blue--text.text-nodec(:href="item.link") {{ item.link }}
             v-flex.body-1.font-weight-light(xs12 md6 v-if="item.code") Code:
