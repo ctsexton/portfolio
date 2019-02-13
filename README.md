@@ -22,6 +22,5 @@ $ npm run generate
 For detailed explanation on how things work, check out the [Nuxt.js](https://github.com/nuxt/nuxt.js) and [Vuetify.js](https://vuetifyjs.com/) documentation.
 
 ## To Do
- - Improve content wording
- - About section
- - get contact form working
+  - Fix margins of titles on experience cards to match project cards
+  - Revise content on experience and project cards

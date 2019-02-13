@@ -93,7 +93,7 @@
 </script>
 <style scoped>
 .texture {
-  background-color: #a8a79b;
+  background-color: #fff;
   background-image: url('/old-mathematics.png');
   background-repeat: repeat;
   background-attachment: scroll;
