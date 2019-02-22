@@ -8,36 +8,45 @@
       light
       class="elevation-5 grey lighten-3"
     >
-      <v-layout
-        justify-center
-        hidden-md-and-down
-        align-center 
-        class="blue darken-1 py-4 click" 
-        v-scroll-to="'#top'">
-        <v-flex xs6>
-          <div class="headline white--text font-weight-light">Cameron<br>Sexton</div>
-          <div class="body-1 white--text font-weight-light">Software Developer</div>
+      <v-layout column justify-space-between fill-height>
+        <v-flex>
+          <v-layout
+            justify-center
+            hidden-md-and-down
+            align-center 
+            class="blue darken-1 py-4 click" 
+            v-scroll-to="'#top'">
+            <v-flex xs6>
+              <div class="headline white--text font-weight-light">Cameron<br>Sexton</div>
+              <div class="body-1 white--text font-weight-light">Software Developer</div>
+            </v-flex>
+          </v-layout>
+          <v-divider></v-divider>
+          <v-list>
+            <v-list-tile
+              router
+              v-scroll-to="{el: '#' + item.title, offset: scrollOffset}"
+              :to="'/'"
+              @click="onMenuSelect"
+              :key="i"
+              v-for="(item, i) in items"
+              exact
+            >
+              <v-list-tile-action>
+                <v-icon :color="item.color" v-html="item.icon"></v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title class="font-weight-thin subheading black--text" v-text="item.title"></v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
         </v-flex>
+        <v-hover class="ma-2 pa-0">
+          <a href="https://github.com/ctsexton" slot-scope="{ hover }">
+            <v-icon size="50" :color="`grey darken-${hover ? 4 : 3}`">fab fa-github</v-icon>
+          </a>
+        </v-hover>
       </v-layout>
-      <v-divider></v-divider>
-      <v-list>
-        <v-list-tile
-          router
-          v-scroll-to="{el: '#' + item.title, offset: scrollOffset}"
-          :to="'/'"
-          @click="onMenuSelect"
-          :key="i"
-          v-for="(item, i) in items"
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon :color="item.color" v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title class="font-weight-thin subheading black--text" v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
     </v-navigation-drawer>
     <v-layout v-if="$breakpoint.is('mdAndDown')">
       <v-toolbar fixed app dark class="blue darken-2">
@@ -64,7 +73,7 @@
         items: [
           { icon: 'perm_identity', title: 'About', to: '/', color: 'blue' },
           { icon: 'trending_up', title: 'Experience', to: '/', color: 'pink' },
-          { icon: 'build', title: 'Projects', to: '/', color: 'yellow darken-1' },
+          { icon: 'build', title: 'Portfolio', to: '/', color: 'yellow darken-1' },
           { icon: 'assessment', title: 'Skills', to: '/', color: 'green' },
           { icon: 'school', title: 'Education', to: '/', color: 'purple' },
           { icon: 'mail', title: 'Contact', to: '/', color: 'brown' },

@@ -1,6 +1,6 @@
 <template lang="pug">
   fragment
-    v-flex(xs11 sm10 md10 grow).ma-0
+    v-flex(xs11 sm10 md8 grow).ma-0
       v-card.my-5(elevation="10" color="grey lighten-4")
         v-card-text
           p.blockquote.left-border.font-weight-light(:class="{ headline: $breakpoint.is('smAndDown'), 'headline': $breakpoint.is('mdAndUp')}") {{ about.quote }}

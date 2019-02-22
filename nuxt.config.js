@@ -5,11 +5,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'ctsexton',
+    title: 'Cameron Sexton - Software Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js + Vuetify.js project' }
+      { hid: 'description', name: 'description', content: 'Cameron Sexton - Software Developer' },
+      { property: 'og:image', content: 'https://ctsexton.github.io/inspired_preview.jpg'},
+      { property: 'og:type', content: 'article'},
+      { property: 'og:title', content: 'Cameron Sexton - Software Developer'},
+      { property: 'og:description', content: 'Cameron Sexton is a Full Stack Developer and Data Analyst based in Los Angeles, CA.'},
+      { property: 'og:url', content: 'https://ctsexton.github.io'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

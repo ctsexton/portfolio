@@ -13,12 +13,13 @@
           p.my-4.title.font-weight-light
             i {{ item.description }}
           ul
-            li.body-2.font-weight-light.my-1(v-for="point, index in item.bullets" :key="index") {{ point }}
+            li.body-2.font-weight-light.my-1(v-for="point, index in item.bullets" :key="index")
+              span(v-html="point")
           v-layout.mt-3(wrap align-baseline)
-            v-flex.body-2.font-weight-light(xs12 md6 v-if="item.link") Link:
+            v-flex.body-2.font-weight-light(xs12 v-if="item.link") Link:
               | 
               a.blue--text.text-nodec(:href="item.link") {{ item.link }}
-            v-flex.body-1.font-weight-light(xs12 md6 v-if="item.code") Code:
+            v-flex.body-2.font-weight-light(xs12 v-if="item.code") Code:
               | 
               a.blue--text.text-nodec(:href="item.code") {{ item.code }}
         v-divider

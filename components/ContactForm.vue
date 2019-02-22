@@ -7,8 +7,12 @@
           v-flex.pa-0.ma-0(grow)
             v-layout.pa-0.ma-0(wrap justify-center)
               v-layout.px-3.ma-0(justify-end align-center)
-                v-icon.ma-2(size="40" color="grey darken-3") fab fa-github
-                v-icon.ma-2(size="40" color="grey darken-3") fab fa-linkedin
+                v-hover
+                  a(href="https://github.com/ctsexton" slot-scope="{ hover }")
+                    v-icon.ma-2(size="60" :color="`grey darken-${hover ? 4 : 3}`") fab fa-github
+                v-hover
+                  a(href="https://www.linkedin.com/in/ctsexton/" slot-scope="{ hover }")
+                    v-icon.ma-2(size="60" :color="`grey darken-${hover ? 4 : 3}`") fab fa-linkedin
               v-flex.pa-0(xs12 v-if="submitStatus != 'OK'")
                 v-form.pa-3.transparent.standard-card(width="100%" left)
                   v-text-field(
