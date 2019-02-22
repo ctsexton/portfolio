@@ -5,7 +5,7 @@
         //v-img(:src="item.image")
         v-divider
         v-layout.mx-2.my-3.pa-0(wrap align-baseline)
-          v-flex.ma-0.text-xs-left.font-weight-light(xs12 md6 :class="{ headline: $breakpoint.is('smAndDown'), 'headline': $breakpoint.is('mdAndUp')}") {{ item.title }}
+          v-flex.ma-0.text-xs-left.font-weight-light(xs12 md6 :class="{ 'headline': $breakpoint.is('smAndDown'), 'display-1': $breakpoint.is('mdAndUp')}") {{ item.title }}
           v-flex.ma-0.text-md-right(xs12 md6 :class="{ subheading: $breakpoint.is('smAndDown'), 'subheading': $breakpoint.is('mdAndUp')}") {{ item.role }}
         v-divider
         v-card-text

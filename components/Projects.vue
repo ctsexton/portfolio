@@ -20,7 +20,7 @@
             a.blue--text.text-nodec(:href="item.code") {{ item.code }}
         v-divider
         v-card-text.pb-1
-          p.title Tech Stack:
+          p.body-2 Tech Stack:
             | 
             span.font-weight-light(v-for="tool, index in item.tools" :key="tool") {{ tool }}
               span(v-if="index != Object.keys(item.tools).length - 1")
