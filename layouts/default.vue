@@ -12,11 +12,11 @@
         justify-center
         hidden-md-and-down
         align-center 
-        class="blue darken-2 py-4 click" 
+        class="blue darken-1 py-4 click" 
         v-scroll-to="'#top'">
         <v-flex xs6>
-          <div class="headline white--text font-weight-thin">Cameron<br>Sexton</div>
-          <div class="body-1 white--text font-weight-thin">Software Developer</div>
+          <div class="headline white--text font-weight-light">Cameron<br>Sexton</div>
+          <div class="body-1 white--text font-weight-light">Software Developer</div>
         </v-flex>
       </v-layout>
       <v-divider></v-divider>
@@ -93,8 +93,8 @@
 </script>
 <style scoped>
 .texture {
-  background-color: #fff;
-  background-image: url('/old-mathematics.png');
+  background-color: #eee;
+  background-image: url('/project-paper.png');
   background-repeat: repeat;
   background-attachment: scroll;
   position: relative;

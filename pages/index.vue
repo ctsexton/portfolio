@@ -3,22 +3,22 @@
     v-layout.pa-0(id="top")
       coverPhoto
     v-layout(row wrap justify-space-around id="About")
-      banner(color="rgba(0, 50, 255, 0.4)" text="About")
+      banner(color="rgba(0, 100, 235, 0.75)" text="About")
       about(:about="content.about")
     v-layout(row wrap justify-space-around id="Experience")
-      banner(color="rgba(255, 20, 20, 0.4)" text="Experience")
+      banner(color="rgba(255, 20, 20, 0.75)" text="Experience")
       experience(:experience="content.experience")
     v-layout(row wrap justify-space-around id="Projects")
-      banner(color="rgba(255, 225, 0, 0.4)" text="Projects")
+      banner(color="rgba(255, 175, 0, 0.75)" text="Projects")
       projects(:projects="content.portfolio")
     v-layout(row wrap justify-space-around id="Skills")
-      banner(color="rgba(0, 255, 0, 0.4)" text="Skills")
+      banner(color="rgba(0, 225, 0, 0.75)" text="Skills")
       skills(:skills="content.skills")
     v-layout(row wrap justify-space-around id="Education")
-      banner(color="rgba(230, 0, 255, 0.4)" text="Education")
+      banner(color="rgba(200, 0, 200, 0.75)" text="Education")
       education(:education="content.education")
     v-layout(row wrap justify-center id="Contact")
-      banner(color="rgba(60, 40, 30, 0.4)" text="Contact")
+      banner(color="rgba(60, 40, 30, 0.75)" text="Contact")
       contact
 </template>
 

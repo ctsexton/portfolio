@@ -1,13 +1,5 @@
 <template lang="pug">
-  v-img.pa-0.ma-0(src="distant_forest.jpg" :height="imgHeight" width="100%" position="bottom center")
-    v-card-text.standout.white--text.pa-4.font-weight-thin(:class="{'display-1': $breakpoint.is('smAndDown'), 'display-3': $breakpoint.is('mdAndUp')}")
-      | Think.
-      br
-      | Code.
-      br
-      | Test.
-      br
-      | Repeat.
+  v-img.pa-0.ma-0(src="blue_wall.jpg" :height="imgHeight" width="100%" position="top center")
 </template>
 <script>
 export default {
@@ -22,3 +14,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+>>>.standout {
+  text-shadow: 2px 2px 7px #000000!important;
+}
+</style>
