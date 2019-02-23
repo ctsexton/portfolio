@@ -8,9 +8,6 @@
           p.body-2 Location:
             | 
             span.font-weight-thin {{ about.location }}
-          p.body-2 Read my code:
-            | 
-            a.no-dec.font-weight-light.blue--text(:href="about.github" target="_blank") {{ about.github }}
           v-divider.my-4
           p.subheading What I bring to the table:
           ul.body-2.font-weight-light
