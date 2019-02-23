@@ -3,7 +3,7 @@
     v-flex(xs11 lg8)
       v-card.my-5(light color="grey lighten-4" elevation="10" tile)
         v-layout.ma-0.pa-0(wrap justify-center)
-          v-img(contain width="100%" max-width="320px" src="inspired_portrait.jpg")
+          v-img(contain width="100%" max-width="320px" src="inspired_portrait-low.jpg")
           v-flex.pa-0.ma-0(grow)
             v-layout.pa-0.ma-0(wrap justify-center)
               v-layout.px-3.ma-0(justify-end align-center)

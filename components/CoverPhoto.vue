@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-img.pa-0.ma-0(src="blue_wall.jpg" :height="imgHeight" width="100%" position="top center")
+  v-img.pa-0.ma-0(src="blue_wall-low.jpg" :height="imgHeight" width="100%" position="top center")
     v-layout.px-3.ma-0(justify-end align-start fill-height)
 </template>
 <script>
